@@ -1,39 +1,38 @@
-import { useState } from "react";
 import CardStories from "./perfilStories";
 import Posts from "./posts";
 import VideoPosts from "./videosPost";
 import React from "react";
+import { useState } from "react";
 
-const btnPrev = document.getElementById("prev");
-const btnNext = document.getElementById("next");
+
+
+export default function Stories(){
+    const [btnPrev, setBtnPrev] = useState('none');
+const [btnNext, setBtnNext] = useState('block');
 let cont = 0;
 
-function esquerda(){
-    const [buttonLeft, setButtonLeft] = useState('');
+function Esquerda(){
     document.querySelector('.story').scrollBy(-100,0);
-    setButtonLeft('none');
     cont--;
     if(cont<=0){
-            btnPrev.style.display = "none";
-            btnNext.style.display = "block";
+        setBtnPrev('none');
+        setBtnNext('block');
     }
 }
 
-function direita(){
-    btnPrev.style.display = "block";
+function Direita(){
+    setBtnPrev('block');
     document.querySelector('.story').scrollBy(100,0);
     cont++;
     if(cont>=3){
-            btnNext.style.display = "none";
+        setBtnNext('none');
     }
 }
-
-export default function Stories(){
     return(
         <section className="storie-feed">
             <div id="box-storie-button" >
                 <CardStories/>
-                <button id="prev" onClick={esquerda}>
+                <button id="prev" onClick={Esquerda} style={{display:`${btnPrev}`}}>
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -44,7 +43,7 @@ export default function Stories(){
                     <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
                     </svg>
                 </button>
-                <button id="next" onClick={direita}>
+                <button id="next" onClick={Direita} style={{display:`${btnNext}`}}>
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

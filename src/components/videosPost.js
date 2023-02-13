@@ -41,7 +41,7 @@ export default function VideoPosts(){
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </header>
                 <div className="img-post">
-                    <video className="video" autoplay muted loop controls> 
+                    <video className="video" autoPlay muted loop controls> 
                         <source className="mp4" src={f.videoMp4} type="video/mp4" alt={f.nome}/>
                         <source src={f.videoOgv} type="video/ogv" alt={f.nome}/>
                     </video>
@@ -50,7 +50,7 @@ export default function VideoPosts(){
                 <article className="bottom-post">
                     <header className="interaction">
                         <div className="like-post">
-                            <ion-icon className="curtir" id="sem-curtida${[i+1+quantidadeImage]}" name="heart-outline"></ion-icon>
+                            <ion-icon className="curtir" id={`sem-curtida${i+6}`} name="heart-outline"></ion-icon>
                             <ion-icon className="like-red" id={`curtida${i+6}`} name="heart"></ion-icon>
                             <ion-icon name="chatbubble-outline" id={`icon-coment${i+6}`}></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
@@ -73,7 +73,7 @@ export default function VideoPosts(){
                     <footer className="addComent">
                         <ion-icon name="happy-outline"></ion-icon>
                         <input className="input-coments" type="text" id={`add-comentario${i+6}`} placeholder="Adicionar comentário..."/>
-                        <button id={`publicar${i+6}`} class="publicar">Publicar</button>
+                        <button id={`publicar${i+6}`} className="publicar">Publicar</button>
                     </footer>
                 </footer>
             </section>

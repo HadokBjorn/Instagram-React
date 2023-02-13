@@ -214,6 +214,7 @@ p{
 }
 .like-red{
     color:red;
+    background-color: red;
 }
 .like-info{
     display: flex;
@@ -636,8 +637,12 @@ sidebar{
         justify-content: start;
         width: 100%;
     }
-    sidebar main > articel div h2{
+    sidebar main > article div h2{
         font-size: 14px;
+    }
+    sidebar ion-icon{
+        font-weight: 700;
+        margin-left: 7px;
     }
 
     sidebar > main > article div h3{

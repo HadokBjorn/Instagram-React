@@ -1,10 +1,14 @@
+function MudaTema(){
+    document.body.classList.toggle("dark");
+}
+
 export default function NabBar(){
     return(
         <>
             <header className="header-mobile">
                 <div className="left">
                     <ion-icon name="logo-instagram"></ion-icon>
-                    <ion-icon onclick="mudaTema()" name="moon-sharp"></ion-icon>
+                    <ion-icon onClick={MudaTema} name="moon-sharp"></ion-icon>
                 </div>
                 <img className="light-logo" src="../../assets/logo.png" alt="light-logo" />
                 <img className="dark-logo" src="../../assets/logo-branca.png" alt="dark-logo"/>
@@ -16,7 +20,7 @@ export default function NabBar(){
                         <ion-icon name="logo-instagram"></ion-icon>
                         <img className="dark-logo" src="/assets/logo-branca.png" alt="dark-logo"/>
                         <img className="light-logo" src="/assets/logo.png" alt="light-logo"/>
-                        <ion-icon onclick="mudaTema()" name="contrast-sharp"></ion-icon>
+                        <ion-icon onClick={MudaTema} name="contrast-sharp"></ion-icon>
                     </div>
                     <input placeholder="Pesquisar"/>
                     <div className="right">
